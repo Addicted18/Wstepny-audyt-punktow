@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wstępny Audyt Mój TAURON</title>
+  <meta name="description" content="Wstępny audyt punktów styku Mój TAURON: hipotezy, priorytety i plan 90 dni pod rolę Head of Design.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero container">
+    <p class="kicker">Wstępny audyt punktów styku</p>
+    <h1>Wstępny audyt punktów styku Mój TAURON: hipotezy, priorytety, plan 90 dni</h1>
+    <p class="lead">
+      Materiał przygotowany pod rozmowę na stanowisko liderskie w obszarze projektowania.
+      Wnioski mają charakter hipotez do walidacji po uzyskaniu dostępu do danych wewnętrznych.
+    </p>
+    <div class="hero-actions">
+      <button class="btn btn-secondary" id="printAudit" type="button">Drukuj / PDF</button>
+    </div>
+    <div class="facts-grid">
+      <article class="fact-card">
+        <p class="fact-label">Google Play</p>
+        <p class="fact-value">4.6 / 5</p>
+        <p class="fact-meta">1 mln+ pobrań, 54,7 tys. opinii</p>
+      </article>
+      <article class="fact-card">
+        <p class="fact-label">App Store</p>
+        <p class="fact-value">4.6 / 5</p>
+        <p class="fact-meta">28 tys. ocen</p>
+      </article>
+      <article class="fact-card">
+        <p class="fact-label">Sygnał spójności</p>
+        <p class="fact-value">iOS 11 vs iOS 17.6+</p>
+        <p class="fact-meta">Rozjazd informacji WWW vs App Store</p>
+      </article>
+      <article class="fact-card">
+        <p class="fact-label">Sygnał UX</p>
+        <p class="fact-value">Rozdzielone logowanie</p>
+        <p class="fact-meta">TAURON i TAURON Dystrybucja</p>
+      </article>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="panel-head">
+        <h2>1. Podsumowanie zarządcze</h2>
+      </div>
+      <div class="summary-grid">
+        <article class="summary-card">
+          <p class="badge p1">P1</p>
+          <h3>Tarcie przed załatwieniem sprawy</h3>
+          <p>Hipoteza: punkt wejścia i język rejestracji podnoszą poziom frustracji zanim klient załatwi sprawę.</p>
+        </article>
+        <article class="summary-card">
+          <p class="badge p1">P1</p>
+          <h3>Niezawodność logowania i płatności</h3>
+          <p>Hipoteza: obszary krytyczne wymagają mocniejszej telemetryki i alertingu, mimo dobrych ocen ogólnych.</p>
+        </article>
+        <article class="summary-card">
+          <p class="badge p1">P1</p>
+          <h3>Spójność doświadczenia i standardów</h3>
+          <p>Hipoteza: rozjazdy między kanałami osłabiają zaufanie do produktu i zwiększają koszt wsparcia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>2. Zakres i ograniczenia audytu</h2>
+      </div>
+      <p class="note-strong">
+        Audyt opiera się wyłącznie na publicznych punktach styku oraz danych wtórnych.
+      </p>
+      <ul class="plain-list">
+        <li>Nie obejmuje dostępu do analytics, crash logs, contact reasons, backlogu ani repozytorium Design Systemu.</li>
+        <li>Nie obejmuje wewnętrznych wyników badań UX i danych operacyjnych zespołów wsparcia.</li>
+        <li>Wnioski są hipotezami do walidacji z CX, Productem, IT i operacjami po wejściu do organizacji.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>3. Najmocniejsze sygnały z dowodami publicznymi</h2>
+        <div class="filter-bar" role="tablist" aria-label="Filtr priorytetu">
+          <button class="chip is-active" data-priority-filter="all" type="button">Wszystkie</button>
+          <button class="chip" data-priority-filter="p1" type="button">P1</button>
+          <button class="chip" data-priority-filter="p2" type="button">P2</button>
+          <button class="chip" data-priority-filter="p3" type="button">P3</button>
+        </div>
+      </div>
+
+      <div class="finding-grid" id="findingGrid">
+        <article class="finding-card" data-priority="p1">
+          <p class="finding-priority p1">P1 / Wysoki</p>
+          <h3>Fragmentacja logowania</h3>
+          <p><strong>Problem:</strong> rozdzielony punkt logowania utrudnia szybkie wejście do właściwej ścieżki.</p>
+          <p><strong>Dowód publiczny:</strong> platforma logowania rozdziela TAURON i TAURON Dystrybucja.</p>
+          <p><strong>Ryzyko biznesowe:</strong> możliwy wzrost porzuceń i kontaktów do centrum obsługi klienta (Contact Center).</p>
+          <p><strong>Rekomendacja:</strong> ujednolicony routing i klarowne komunikaty wejścia.</p>
+          <p><strong>Poziom pewności:</strong> wysoki.</p>
+          <p class="finding-source"><strong>Źródło:</strong> logowanie.tauron.pl</p>
+        </article>
+
+        <article class="finding-card" data-priority="p1">
+          <p class="finding-priority p1">P1 / Wysoki</p>
+          <h3>Logowanie i płatności jako ścieżki krytyczne</h3>
+          <p><strong>Problem:</strong> obszary krytyczne wymagają szybszej detekcji i reakcji na incydenty.</p>
+          <p><strong>Dowód publiczny:</strong> sygnały w opiniach o problemach logowania/płatności.</p>
+          <p><strong>Ryzyko biznesowe:</strong> spadek skuteczności samoobsługi i NPS.</p>
+          <p><strong>Rekomendacja:</strong> telemetryka, alerting, analiza odpływu w lejku i spójna komunikacja statusów.</p>
+          <p><strong>Poziom pewności:</strong> średni.</p>
+          <p class="finding-source"><strong>Źródło:</strong> Google Play, App Store (opinie użytkowników)</p>
+        </article>
+
+        <article class="finding-card" data-priority="p1">
+          <p class="finding-priority p1">P1 / Wysoki</p>
+          <h3>Niespójne wymagania iOS</h3>
+          <p><strong>Problem:</strong> rozbieżne wymagania techniczne osłabiają zaufanie do komunikatów.</p>
+          <p><strong>Dowód publiczny:</strong> FAQ wskazuje iOS 11, App Store wymaga iOS 17.6+.</p>
+          <p><strong>Ryzyko biznesowe:</strong> tarcie przed instalacją i utrata zaufania do komunikatów.</p>
+          <p><strong>Rekomendacja:</strong> jeden proces aktualizacji wymagań technicznych we wszystkich kanałach.</p>
+          <p><strong>Poziom pewności:</strong> wysoki.</p>
+          <p class="finding-source"><strong>Źródło:</strong> tauron.pl (FAQ), App Store</p>
+        </article>
+
+        <article class="finding-card" data-priority="p2">
+          <p class="finding-priority p2">P2 / Średni</p>
+          <h3>Złożone nazewnictwo rejestracji</h3>
+          <p><strong>Problem:</strong> specjalistyczne nazwy pól podnoszą próg wejścia dla części użytkowników.</p>
+          <p><strong>Dowód publiczny:</strong> pola typu PESEL, numer ewidencyjny lub płatnika.</p>
+          <p><strong>Ryzyko biznesowe:</strong> niższa skuteczność aktywacji i wyższy wolumen zgłoszeń.</p>
+          <p><strong>Rekomendacja:</strong> uproszczenie języka i kontekstowe podpowiedzi.</p>
+          <p><strong>Poziom pewności:</strong> średni.</p>
+          <p class="finding-source"><strong>Źródło:</strong> logowanie.tauron.pl (rejestracja)</p>
+        </article>
+
+        <article class="finding-card" data-priority="p3">
+          <p class="finding-priority p3">P3 / Niski-Średni</p>
+          <h3>Dostępność językowa</h3>
+          <p><strong>Problem:</strong> zakres językowy może ograniczać część użytkowników niepolskojęzycznych.</p>
+          <p><strong>Dowód publiczny:</strong> App Store wskazuje wyłącznie język polski.</p>
+          <p><strong>Ryzyko biznesowe:</strong> niższa dostępność części ścieżek dla użytkowników niepolskojęzycznych.</p>
+          <p><strong>Rekomendacja:</strong> walidacja skali problemu i decyzja etapowa dla języka EN.</p>
+          <p><strong>Poziom pewności:</strong> średni.</p>
+          <p class="finding-source"><strong>Źródło:</strong> App Store</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>4. Macierz priorytetów: wpływ × pewność × nakład</h2>
+      </div>
+      <div class="kpi-table-wrap">
+        <table class="kpi-table">
+          <thead>
+            <tr>
+              <th>Obszar</th>
+              <th>Impact</th>
+              <th>Confidence</th>
+              <th>Effort</th>
+              <th>Priorytet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fragmentacja logowania</td>
+              <td>Wysoki</td>
+              <td>Wysoki</td>
+              <td>Średni</td>
+              <td>P1</td>
+            </tr>
+            <tr>
+              <td>Logowanie i płatności</td>
+              <td>Wysoki</td>
+              <td>Średni</td>
+              <td>Średni</td>
+              <td>P1</td>
+            </tr>
+            <tr>
+              <td>Niespójność iOS</td>
+              <td>Wysoki</td>
+              <td>Wysoki</td>
+              <td>Niski</td>
+              <td>P1</td>
+            </tr>
+            <tr>
+              <td>Język rejestracji</td>
+              <td>Średni</td>
+              <td>Średni</td>
+              <td>Średni</td>
+              <td>P2</td>
+            </tr>
+            <tr>
+              <td>Dostępność językowa</td>
+              <td>Niski-Średni</td>
+              <td>Średni</td>
+              <td>Wysoki</td>
+              <td>P3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>5. Hipotezy wpływu biznesowego po walidacji danych</h2>
+      </div>
+      <div class="impact-grid">
+        <article class="impact-card">
+          <h3>Kierunek wpływu: wysoki</h3>
+          <p><strong>Obszar:</strong> logowanie i rejestracja</p>
+          <p><strong>Metryki do walidacji:</strong> skuteczność aktywacji, completion rate, liczba kontaktów po nieudanej aktywacji.</p>
+        </article>
+        <article class="impact-card">
+          <h3>Kierunek wpływu: wysoki</h3>
+          <p><strong>Obszar:</strong> logowanie i płatności</p>
+          <p><strong>Metryki do walidacji:</strong> skuteczność płatności, czas wykrycia (time-to-detect), czas naprawy (time-to-fix), udział zgłoszeń o błędach krytycznych.</p>
+        </article>
+        <article class="impact-card">
+          <h3>Kierunek wpływu: średni</h3>
+          <p><strong>Obszar:</strong> spójność komunikacji i standardów</p>
+          <p><strong>Metryki do walidacji:</strong> spójność wzorców, liczba rozbieżności kanałowych, impact na satysfakcję klienta.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>6. Dlaczego to ma znaczenie dla TAURON-u (So what?)</h2>
+      </div>
+      <ul class="plain-list">
+        <li>Prostsze wejście zwiększa skuteczność samoobsługi.</li>
+        <li>Stabilniejsze logowanie i płatności ograniczają frustrację oraz liczbę zgłoszeń.</li>
+        <li>Spójne standardy projektowe skracają czas wdrożeń i obniżają koszt zmian.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>7. Plan 90 dni pod rolę Head of Design</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-step">
+          <p class="phase">0-30 dni</p>
+          <h3>Diagnoza funkcji projektowej</h3>
+          <p>Mapa interesariuszy, przegląd portfela, audyt Design Systemu, analiza kluczowych ścieżek klienta, wspólne KPI z CX, Productem i IT.</p>
+        </article>
+        <article class="timeline-step">
+          <p class="phase">31-60 dni</p>
+          <h3>Governance i priorytety ścieżek</h3>
+          <p>Zasady współpracy design-product-IT, priorytety dla 2-3 ścieżek o największym wpływie, plan rozwoju kompetencji zespołu.</p>
+        </article>
+        <article class="timeline-step">
+          <p class="phase">61-90 dni</p>
+          <h3>Quick wins i skalowanie</h3>
+          <p>Wdrożenie pierwszych usprawnień, stały rytm badań i przeglądów jakości projektowej oraz roadmapa Design Systemu.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>8. Co zweryfikuję jako szef biura projektowania</h2>
+      </div>
+      <ul class="plain-list">
+        <li>Dojrzałość Design Systemu i model utrzymania wzorców.</li>
+        <li>Pokrycie kluczowych ścieżek przez wspólne komponenty i zasady interakcji.</li>
+        <li>Jakość współpracy design-product-IT-CX w procesie decyzyjnym.</li>
+        <li>Obecność badań UX i decyzji opartych o dane.</li>
+        <li>Model rozwoju kompetencji zespołu Product Designerów.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>9. KPI do walidacji po wejściu</h2>
+      </div>
+      <div class="kpi-table-wrap">
+        <table class="kpi-table">
+          <thead>
+            <tr>
+              <th>Obszar</th>
+              <th>KPI główny</th>
+              <th>KPI wspierające</th>
+              <th>Cel biznesowy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wejście i aktywacja</td>
+              <td>Skuteczność aktywacji</td>
+              <td>Odpływ w lejku (drop-off), czas ukończenia</td>
+              <td>Wyższy udział spraw załatwianych cyfrowo</td>
+            </tr>
+            <tr>
+              <td>Logowanie i płatności</td>
+              <td>Skuteczność płatności</td>
+              <td>Czas wykrycia (time-to-detect), czas naprawy (time-to-fix)</td>
+              <td>Stabilność krytycznych ścieżek i zaufanie klienta</td>
+            </tr>
+            <tr>
+              <td>Doświadczenie klienta</td>
+              <td>Skuteczność samoobsługi</td>
+              <td>NPS, liczba kontaktów do centrum obsługi klienta</td>
+              <td>Niższy koszt obsługi i lepszy CX</td>
+            </tr>
+            <tr>
+              <td>Jakość projektowa</td>
+              <td>Spójność wzorców</td>
+              <td>Pokrycie Design Systemem, przeglądy jakościowe</td>
+              <td>Skalowalny model projektowania</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel annex-panel">
+      <div class="panel-head">
+        <h2>Aneks: sygnały jakościowe z publicznej warstwy web</h2>
+        <div class="filter-bar device-switch" role="tablist" aria-label="Tryb audytu Lighthouse">
+          <button class="chip device-chip is-active" data-device="mobile" type="button">Mobile</button>
+          <button class="chip device-chip" data-device="desktop" type="button">Desktop</button>
+        </div>
+      </div>
+      <p class="annex-meta" id="techAuditMeta">
+        Lighthouse (mobile), URL: https://www.tauron.pl/, pomiar: 11.03.2026 18:01 (CET)
+      </p>
+      <p class="annex-meta" id="techAuditMode">Tryb danych: fallback (wartości referencyjne)</p>
+      <div class="score-legend">
+        <span class="legend-item legend-bad">Niskie: 0-59</span>
+        <span class="legend-item legend-medium">Średnie: 60-89</span>
+        <span class="legend-item legend-good">Dobre: 90-100</span>
+      </div>
+      <div class="tech-score-grid ring-grid">
+        <article class="tech-score-card ring-card is-bad" data-metric="performance" tabindex="0">
+          <div class="score-ring" style="--score: 32;">
+            <p class="score-number"><span data-tech-score>32</span></p>
+          </div>
+          <p class="tech-score-label">Performance (wydajność)</p>
+          <p class="tech-score-note" data-tech-note>Wysoki priorytet poprawy</p>
+          <p class="score-tooltip" data-tech-tooltip>Wolne ładowanie zwiększa porzucenia i obniża konwersję w kluczowych ścieżkach.</p>
+        </article>
+        <article class="tech-score-card ring-card is-good" data-metric="accessibility" tabindex="0">
+          <div class="score-ring" style="--score: 91;">
+            <p class="score-number"><span data-tech-score>91</span></p>
+          </div>
+          <p class="tech-score-label">Accessibility</p>
+          <p class="tech-score-note" data-tech-note>Docelowy poziom</p>
+          <p class="score-tooltip" data-tech-tooltip>Dobra dostępność zmniejsza ryzyko wykluczenia części klientów.</p>
+        </article>
+        <article class="tech-score-card ring-card is-medium" data-metric="best-practices" tabindex="0">
+          <div class="score-ring" style="--score: 73;">
+            <p class="score-number"><span data-tech-score>73</span></p>
+          </div>
+          <p class="tech-score-label">Best Practices (dobre praktyki)</p>
+          <p class="tech-score-note" data-tech-note>Średni poziom jakości</p>
+          <p class="score-tooltip" data-tech-tooltip>Wynik sugeruje dług jakościowy w obszarze skryptów i integracji.</p>
+        </article>
+        <article class="tech-score-card ring-card is-good" data-metric="seo" tabindex="0">
+          <div class="score-ring" style="--score: 100;">
+            <p class="score-number"><span data-tech-score>100</span></p>
+          </div>
+          <p class="tech-score-label">SEO</p>
+          <p class="tech-score-note" data-tech-note>Docelowy poziom</p>
+          <p class="score-tooltip" data-tech-tooltip>Wysoka widoczność organiczna wspiera stabilny dopływ ruchu.</p>
+        </article>
+      </div>
+      <div class="proof-grid" id="proofGrid">
+        <article class="proof-card">
+          <p class="proof-label">FCP (s)</p>
+          <p class="proof-value" id="proofFcp">4.6 s</p>
+          <p class="proof-note">Pierwsza treść widoczna dla użytkownika.</p>
+        </article>
+        <article class="proof-card">
+          <p class="proof-label">LCP (s)</p>
+          <p class="proof-value" id="proofLcp">12.3 s</p>
+          <p class="proof-note">Czas wyrenderowania głównego elementu strony.</p>
+        </article>
+        <article class="proof-card">
+          <p class="proof-label">TBT (ms)</p>
+          <p class="proof-value" id="proofTbt">954 ms</p>
+          <p class="proof-note">Metryka pomocnicza obciążenia głównego wątku.</p>
+        </article>
+        <article class="proof-card">
+          <p class="proof-label">Niewykorzystany JS</p>
+          <p class="proof-value" id="proofUnusedJs">930 KiB</p>
+          <p class="proof-note">Potencjalna rezerwa optymalizacyjna po stronie skryptów.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel annex-panel">
+      <div class="panel-head">
+        <h2>Aneks: kontekst rynkowy (StatCounter)</h2>
+      </div>
+      <div class="market-grid">
+        <article class="market-card">
+          <h3>Świat</h3>
+          <div class="market-visual">
+            <div class="market-donut" style="--desktop: 46.96; --phone: 51.41; --tablet: 1.63;" aria-hidden="true"></div>
+            <ul class="market-legend">
+              <li><span class="legend-dot phone"></span>Telefony: 51.41%</li>
+              <li><span class="legend-dot desktop"></span>Desktop: 46.96%</li>
+              <li><span class="legend-dot tablet"></span>Tablet: 1.63%</li>
+            </ul>
+          </div>
+          <p>Urządzenia mobilne (telefon + tablet): <strong>53.04%</strong></p>
+          <p>Telefony stricte: <strong>51.41%</strong></p>
+        </article>
+        <article class="market-card">
+          <h3>Polska</h3>
+          <div class="market-visual">
+            <div class="market-donut" style="--desktop: 60.89; --phone: 38.57; --tablet: 0.54;" aria-hidden="true"></div>
+            <ul class="market-legend">
+              <li><span class="legend-dot phone"></span>Telefony: 38.57%</li>
+              <li><span class="legend-dot desktop"></span>Desktop: 60.89%</li>
+              <li><span class="legend-dot tablet"></span>Tablet: 0.54%</li>
+            </ul>
+          </div>
+          <p>Urządzenia mobilne (telefon + tablet): <strong>39.11%</strong></p>
+          <p>Telefony stricte: <strong>38.57%</strong></p>
+        </article>
+      </div>
+      <p class="annex-meta">
+        Dane kontekstowe rynku (nie dane ruchu TAURON): StatCounter, luty 2026.
+      </p>
+    </section>
+
+    <section class="panel panel-sources">
+      <div class="panel-head">
+        <h2>Źródła</h2>
+      </div>
+      <p class="annex-meta">Stan źródeł: publicznie dostępne punkty styku oraz listingi sklepów aplikacji; bez dostępu do danych wewnętrznych.</p>
+      <ul class="plain-list">
+        <li><a href="https://logowanie.tauron.pl/" target="_blank" rel="noopener noreferrer">Platforma logowania TAURON</a></li>
+        <li><a href="https://www.tauron.pl/dla-domu/obsluga-i-pomoc/moj-tauron" target="_blank" rel="noopener noreferrer">Mój TAURON - opis produktu</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=pl.tauron.mtauron" target="_blank" rel="noopener noreferrer">Google Play - Mój TAURON</a></li>
+        <li><a href="https://apps.apple.com/pl/app/m%C3%B3j-tauron/id1414805668" target="_blank" rel="noopener noreferrer">App Store - Mój TAURON</a></li>
+        <li><a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/poland" target="_blank" rel="noopener noreferrer">StatCounter - Poland</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>Stan źródeł / data weryfikacji: 11.03.2026</p>
+    <p>Data wygenerowania pliku: <span id="generatedAt">11.03.2026 00:00</span></p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
